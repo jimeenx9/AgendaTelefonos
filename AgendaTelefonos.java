@@ -5,19 +5,23 @@ class Contacto implements Serializable {
     private String nombre;
     private String telefono;
 
+    // Constructor de la clase Contacto
     public Contacto(String nombre, String telefono) {
         this.nombre = nombre;
         this.telefono = telefono;
     }
 
+    // Método para obtener el nombre del contacto
     public String getNombre() {
         return nombre;
     }
 
+    // Método para obtener el teléfono del contacto
     public String getTelefono() {
         return telefono;
     }
 
+    // Método para representar el contacto como una cadena de texto
     @Override
     public String toString() {
         return "Nombre: " + nombre + ", Teléfono: " + telefono;
@@ -28,11 +32,13 @@ public class AgendaTelefonos {
     private static final String FICHERO_AGENDA = "agenda.dat";
     private List<Contacto> contactos;
 
+    // Constructor de la clase AgendaTelefonos
     public AgendaTelefonos() {
         contactos = new ArrayList<>();
         cargarAgenda();
     }
 
+    // Método para mostrar el menú de opciones
     public void mostrarMenu() {
         System.out.println("¡Bienvenido a su Agenda!");
         System.out.println("1. Agregar contacto");
