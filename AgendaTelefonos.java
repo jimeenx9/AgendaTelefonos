@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-
+ //Comentario de prueba 
 class Contacto implements Serializable {
     private String nombre;
     private String telefono;
