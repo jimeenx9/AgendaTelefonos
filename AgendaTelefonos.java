@@ -33,6 +33,14 @@ public class AgendaTelefonos {
         cargarAgenda();
     }
 
+    public void mostrarMenu() {
+        System.out.println("¡Bienvenido a su Agenda!");
+        System.out.println("1. Agregar contacto");
+        System.out.println("2. Eliminar contacto");
+        System.out.println("3. Mostrar contactos");
+        System.out.println("4. Salir");
+    }
+
     public void agregarContacto(String nombre, String telefono) {
         contactos.add(new Contacto(nombre, telefono));
         guardarAgenda();
@@ -75,11 +83,7 @@ public class AgendaTelefonos {
         int opcion;
 
         do {
-            System.out.println("\nGestión de Agenda Telefónica");
-            System.out.println("1. Añadir contacto");
-            System.out.println("2. Eliminar contacto");
-            System.out.println("3. Mostrar agenda");
-            System.out.println("4. Salir");
+            agenda.mostrarMenu();
             System.out.print("Seleccione una opción: ");
             opcion = scanner.nextInt();
             scanner.nextLine(); // Consumir el salto de línea
