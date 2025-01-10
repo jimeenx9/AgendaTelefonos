@@ -37,7 +37,10 @@ public class AgendaTelefonos {
         contactos = new ArrayList<>();
         cargarAgenda();
     }
-
+    public List<Contacto> getContacts() {
+        return contactos;
+    }
+    
     // Método para mostrar el menú de opciones
     public void mostrarMenu() {
         System.out.println("¡Bienvenido a su Agenda!");
@@ -82,7 +85,21 @@ public class AgendaTelefonos {
             e.printStackTrace();
         }
     }
-
+    public String showContacts() {
+        if (contactos.isEmpty()) {
+            return "La agenda está vacía.";
+        } else {
+            StringBuilder result = new StringBuilder();
+            for (Contacto contacto : contactos) {
+                result.append(contacto.getNombre())
+                      .append(": ")
+                      .append(contacto.getTelefono())
+                      .append("\n");
+            }
+            return result.toString();
+        }
+    }
+    
     public static void main(String[] args) {
         AgendaTelefonos agenda = new AgendaTelefonos();
         Scanner scanner = new Scanner(System.in);
